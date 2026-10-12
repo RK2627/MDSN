@@ -6,30 +6,30 @@ Work3 Branch03 EC-PA controlled non-paired audit
   "pa_raw_rows": 11219,
   "pa_qc_unique_165": 11219,
   "similarity_counts": {
-    "ge_1.00": 4778,
-    "ge_0.95": 4796,
-    "ge_0.90": 4797,
-    "ge_0.85": 4801,
-    "ge_0.80": 4804,
-    "ge_0.70": 4815
+    "ge_1.00": 4788,
+    "ge_0.95": 4823,
+    "ge_0.90": 4838,
+    "ge_0.85": 4857,
+    "ge_0.80": 4887,
+    "ge_0.70": 4964
   },
-  "pa_retained_lt_0.80": 6415,
-  "pa_retention_fraction_lt_0.80": 0.571797842945004,
+  "pa_retained_lt_0.80": 6332,
+  "pa_retention_fraction_lt_0.80": 0.5643996791157857,
   "ec_pa_domain_metrics_after_filter": {
     "n_a": 12972,
-    "n_b": 6415,
+    "n_b": 6332,
     "gc_mean_a": 0.3745124697483625,
-    "gc_mean_b": 0.5410302557925317,
-    "gc_abs_mean_diff": 0.16651778604416922,
-    "gc_ks": 0.5102953925103748,
-    "gc_wasserstein": 0.16651778604416925,
-    "jsd_6mer": 0.09713167604467111,
-    "host_auc_6mer": 0.7918678112620698,
-    "svd20_centroid_distance_scaled": 3.1412317752838135
+    "gc_mean_b": 0.5418480445644059,
+    "gc_abs_mean_diff": 0.16733557481604344,
+    "gc_ks": 0.5113137894164973,
+    "gc_wasserstein": 0.16733557481604347,
+    "jsd_6mer": 0.09800953630547075,
+    "host_auc_6mer": 0.7945720598431003,
+    "svd20_centroid_distance_scaled": 3.1546947956085205
   },
   "sources": {
     "ec": "https://raw.githubusercontent.com/RK2627/PromoDGDE/main/Data/ecoli/ecoli_exp.csv",
     "pa": "https://raw.githubusercontent.com/WangLabTHU/DeepCROSS/main/dataset/AAE_supervised/calibration_nm2018.csv"
   },
-  "primary_similarity_rule": "exclude PA sequence if max aligned identity to any EC sequence or its reverse-complement is >=0.80"
+  "primary_similarity_rule": "exclude PA if best 165-bp global-alignment identity to EC (either strand) is >=0.80"
 }
