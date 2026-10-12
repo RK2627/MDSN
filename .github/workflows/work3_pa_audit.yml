@@ -1,0 +1,30 @@
+name: Work3 PA audit
+on:
+  push:
+    branches: [tmp-work3-pa-audit-20261012]
+    paths:
+      - work3_pa_audit.py
+      - .github/workflows/work3_pa_audit.yml
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy pandas scipy scikit-learn
+      - run: python work3_pa_audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: work3-pa-audit
+          path: audit_outputs/
+      - name: Commit audit outputs
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit_outputs
+          git diff --cached --quiet || git commit -m 'Add Work3 EC-PA audit outputs'
+          git push
