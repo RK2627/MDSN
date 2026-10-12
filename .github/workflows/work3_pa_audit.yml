@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - run: sudo apt-get update -qq && sudo apt-get install -y vsearch
       - run: pip install numpy pandas scipy scikit-learn
       - run: python work3_pa_audit.py
       - uses: actions/upload-artifact@v4
@@ -28,4 +29,3 @@ jobs:
           git add audit_outputs
           git diff --cached --quiet || git commit -m 'Add Work3 EC-PA audit outputs'
           git push
-# trigger 2026-10-12
