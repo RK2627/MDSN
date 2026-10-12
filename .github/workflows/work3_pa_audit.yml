@@ -28,3 +28,4 @@ jobs:
           git add audit_outputs
           git diff --cached --quiet || git commit -m 'Add Work3 EC-PA audit outputs'
           git push
+# trigger 2026-10-12
